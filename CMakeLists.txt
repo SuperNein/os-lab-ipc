@@ -32,7 +32,7 @@ set(PARENT_SOURCES
 )
 
 if(WIN32)
-    list(APPEND PARENT_SOURCES src/windows/process_windows.cpp)
+    list(APPEND PARENT_SOURCES src/win/process_win.cpp)
 else()
     list(APPEND PARENT_SOURCES src/posix/process_posix.cpp)
 endif()
