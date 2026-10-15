@@ -31,12 +31,16 @@ set(PARENT_SOURCES
     src/parent.cpp
 )
 
-if(WIN32)
-    list(APPEND PARENT_SOURCES src/win/process_win.cpp)
-else()
+if(UNIX)
     list(APPEND PARENT_SOURCES src/posix/process_posix.cpp)
+# else()
+#     list(APPEND PARENT_SOURCES src/win/process_win.cpp)
 endif()
 
 add_executable(parent ${PARENT_SOURCES})
 target_include_directories(parent PRIVATE include)
 target_link_libraries(parent PRIVATE compiler_warnings)
+
+target_compile_definitions(parent PRIVATE 
+    CHILD_PATH="$<TARGET_FILE:child>"
+)
