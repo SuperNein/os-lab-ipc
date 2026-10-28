@@ -33,8 +33,8 @@ set(PARENT_SOURCES
 
 if(UNIX)
     list(APPEND PARENT_SOURCES src/posix/process_posix.cpp)
-# else()
-#     list(APPEND PARENT_SOURCES src/win/process_win.cpp)
+else()
+    list(APPEND PARENT_SOURCES src/win/process_win.cpp)
 endif()
 
 add_executable(parent ${PARENT_SOURCES})
