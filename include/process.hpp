@@ -29,6 +29,8 @@ public:
     void close_input();
     void wait();
 
+    unsigned long get_pid() const;
+
 private:
     pipe_handle_t write_fd;
     proc_handle_t pid;

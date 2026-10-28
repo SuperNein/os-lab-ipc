@@ -120,3 +120,7 @@ Process::~Process() {
     close_input();
     wait();
 }
+
+unsigned long Process::get_pid() const {
+    return static_cast<unsigned long>(pid);
+}

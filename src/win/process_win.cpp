@@ -134,3 +134,10 @@ Process::~Process() {
     close_input();
     wait();
 }
+
+unsigned long Process::get_pid() const {
+    if (pid == INVALID_HANDLE_VALUE || pid == nullptr) {
+        return 0;
+    }
+    return static_cast<unsigned long>(GetProcessId(pid));
+}
